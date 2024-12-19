@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Style de base pour le label */
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Cacher la case par défaut */
+.custom-checkbox input[type="checkbox"] {
+  opacity: 100;
+  position: absolute;
+}
+
+/* Styliser le conteneur de la checkbox */
+.custom-checkbox .checkmark {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #E5E7EB;
+  border-radius: 2px;
+  background-color: #ffffff;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* Ajouter le point violet à l'état coché */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: #c28fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
