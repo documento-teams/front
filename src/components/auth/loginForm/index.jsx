@@ -26,8 +26,8 @@ const LoginForm = () => {
         placeholder="Password" 
         helperText="Enter your password"
       />
-      <Checkbox label="Remember me" />
-      <Button label="Login" type="submit" />
+      {/* <Checkbox label="Remember me" /> */}
+      <Button label="Login" type="submit" borderColor="#9F5FCE" backgroundColor="#C28FFF" />
     </form>
   );
 }
