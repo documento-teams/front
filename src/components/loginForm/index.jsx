@@ -3,7 +3,7 @@ import { Button, Checkbox, Group, TextInput, PasswordInput, Card } from '@mantin
 import { useForm } from '@mantine/form';
 
 const LoginForm = () => {
-  const { email, setEmail, password, setPassword, error, handleLogin } = useLogin();
+  const { setEmail,  setPassword, error, handleLogin } = useLogin();
 
   const form = useForm({
     initialValues: {
@@ -16,9 +16,9 @@ const LoginForm = () => {
     },
   });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    handleLogin(form.values);
+    await handleLogin(form.values);
   }
 
   return (
@@ -29,7 +29,6 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit}>
         <TextInput
           withAsterisk
-          value={email}
           onChange={(event) => setEmail(event.currentTarget.value)}
           label="Email"
           placeholder="your@email.com"
@@ -39,7 +38,6 @@ const LoginForm = () => {
         <PasswordInput
           label="Password"
           placeholder="Your password"
-          value={password}
           onChange={(event) => setPassword(event.currentTarget.value)}
           {...form.getInputProps('password')}
         />
@@ -49,8 +47,6 @@ const LoginForm = () => {
           <Button type="submit">Submit</Button>
         </Group>
       </form>
-
-
     </Card>
   );
 }

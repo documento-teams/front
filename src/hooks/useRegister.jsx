@@ -1,15 +1,13 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const useLogin = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const useRegister = () => { 
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  
-  const handleLogin = async (values) => {
+
+  const handleRegister = async (values) => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_URL_API}/api/auth/login`, {
+      const response = await fetch(`${import.meta.env.VITE_URL_API}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,22 +19,18 @@ const useLogin = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
+      // console.log('Success:', data);
 
-      localStorage.setItem('token', data.token);
-
-      navigate('/dashboard');
+      navigate('/login');
     } catch (error) {
       console.error('Error:', error);
       setError(error.message);
     }
   };
   return {
-    email,
-    setEmail,
-    password,
-    setPassword,
     error,
-    handleLogin,
+    handleRegister,
   };
-}
-export default useLogin;
+};
+
+export default useRegister;
