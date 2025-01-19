@@ -1,5 +1,5 @@
 import useLogin from "@/hooks/useLogin";
-import { Button, Group, TextInput, PasswordInput, Card } from '@mantine/core';
+import { Button, Group, TextInput, PasswordInput, Card, Center } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useNavigate } from "react-router-dom";
 
@@ -44,12 +44,12 @@ const LoginForm = () => {
           {...form.getInputProps('password')}
         />
 
-        <Group justify="flex-end" mt="md">
-          <Button variant="white">Forgot password?</Button>
-          <Button type="submit">Submit</Button>
+        <Group position="center" mt="md" grow>
+          <Button variant="filled" color="gray" onClick={() => navigate('/register')} >Sign up</Button>
+          <Button type="submit">Login</Button>
         </Group>
         <Group justify="flex" mt="md">
-          <Button onClick={() => navigate('/register')} style={{ width: '100%' }}>Sign up</Button>
+          <Button variant="outline" color="gray" fullWidth>Forgot Password</Button>
         </Group>
       </form>
     </Card>

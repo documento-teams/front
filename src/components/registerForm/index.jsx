@@ -61,10 +61,10 @@ const RegisterForm = () => {
         {error && <div style={{ color: 'red' }}>{error}</div>}
 
         <Group position="right" mt="md">
-          <Button type="submit" disabled={!form.isValid()}>Register</Button>
+          <Button type="submit" disabled={!form.isValid()} style={{ width: '100%' }}>Register</Button>
         </Group>
         <Group justify="flex" mt="md">
-          <Button onClick={() => navigate('/register')} style={{ width: '100%' }}>Sign up</Button>
+          <Button variant="subtle" onClick={() => navigate('/login')}>Sign up</Button>
         </Group>
       </form>
     </Card>
