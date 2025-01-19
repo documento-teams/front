@@ -30,6 +30,7 @@ const LoginForm = () => {
       </Card.Section>
       <form onSubmit={handleSubmit}>
         <TextInput
+          variant="filled"
           withAsterisk
           onChange={(event) => setEmail(event.currentTarget.value)}
           label="Email"
@@ -39,6 +40,7 @@ const LoginForm = () => {
 
         <PasswordInput
           label="Password"
+          variant="filled"
           placeholder="Your password"
           onChange={(event) => setPassword(event.currentTarget.value)}
           {...form.getInputProps('password')}

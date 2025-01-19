@@ -32,6 +32,7 @@ const RegisterForm = () => {
       <form onSubmit={handleSubmit}>
         <TextInput
           withAsterisk
+          variant="filled"
           label="Email"
           placeholder="your@email.com"
           {...form.getInputProps('email')}
@@ -39,6 +40,7 @@ const RegisterForm = () => {
 
         <TextInput
           withAsterisk
+          variant="filled"
           label="Fullname"
           placeholder="Your fullname"
           {...form.getInputProps('fullname')}
@@ -46,6 +48,7 @@ const RegisterForm = () => {
 
         <PasswordInput
           withAsterisk
+          variant="filled"
           label="Password"
           placeholder="Your password"
           {...form.getInputProps('password')}
@@ -53,6 +56,7 @@ const RegisterForm = () => {
 
         <PasswordInput
           withAsterisk
+          variant="filled"
           label="Confirm Password"
           placeholder="Confirm your password"
           {...form.getInputProps('confirmPassword')}
