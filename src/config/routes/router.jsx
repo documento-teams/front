@@ -3,7 +3,9 @@ import Homepage from "../../views/homepage";
 import Login from "@/views/auth/login";
 import Dashboard from "@/views/dashboard";
 import Register from "@/views/auth/register";
+import DocumentView from "@/views/document";
 import ProtectedRoutes from "@/components/protectedRoutes";
+
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <ProtectedRoutes><Dashboard /></ProtectedRoutes>,
+  },
+  {
+    path: "/document",
+    element: <DocumentView />,
   }
 ]);
 
