@@ -1,10 +1,9 @@
 import useLogin from "@/hooks/useLogin";
-import { Button, Group, TextInput, PasswordInput, Card, Center } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-  const { setEmail,  setPassword, error, handleLogin } = useLogin();
+  const { setEmail, setPassword, error, handleLogin } = useLogin();
   const navigate = useNavigate();
 
   const form = useForm({
@@ -24,37 +23,49 @@ const LoginForm = () => {
   }
 
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
-      <Card.Section>
-        {/* insert documento logo */}
-      </Card.Section>
-      <form onSubmit={handleSubmit}>
-        <TextInput
-          variant="filled"
-          withAsterisk
-          onChange={(event) => setEmail(event.currentTarget.value)}
-          label="Email"
-          placeholder="your@email.com"
-          {...form.getInputProps('email')}
-        />
+    <div className="card shadow-lg p-6 rounded-lg">
+      <div className="card-body">
+        <form onSubmit={handleSubmit}>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Email</span>
+            </label>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              className="input input-bordered"
+              onChange={(event) => setEmail(event.currentTarget.value)}
+              {...form.getInputProps('email')}
+            />
+          </div>
 
-        <PasswordInput
-          label="Password"
-          variant="filled"
-          placeholder="Your password"
-          onChange={(event) => setPassword(event.currentTarget.value)}
-          {...form.getInputProps('password')}
-        />
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Password</span>
+            </label>
+            <input
+              type="password"
+              placeholder="Your password"
+              className="input input-bordered"
+              onChange={(event) => setPassword(event.currentTarget.value)}
+              {...form.getInputProps('password')}
+            />
+          </div>
 
-        <Group position="center" mt="md" grow>
-          <Button variant="filled" color="gray" onClick={() => navigate('/register')} >Sign up</Button>
-          <Button type="submit">Login</Button>
-        </Group>
-        <Group justify="flex" mt="md">
-          <Button variant="outline" color="gray" fullWidth>Forgot Password</Button>
-        </Group>
-      </form>
-    </Card>
+          {error && <div className="text-red-500 mt-2">{error}</div>}
+
+          <div className="form-control mt-4">
+            <button type="submit" className="btn btn-primary" disabled={!form.isValid()}>Login</button>
+          </div>
+          <div className="form-control mt-4">
+            <button type="button" className="btn btn-link" onClick={() => navigate('/register')}>Sign up</button>
+          </div>
+          <div className="form-control mt-4">
+            <button type="button" className="btn btn-outline" onClick={() => navigate('/forgot-password')}>Forgot Password</button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 

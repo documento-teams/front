@@ -1,7 +1,6 @@
 import useRegister from "@/hooks/useRegister";
-import { Button, Group, TextInput, PasswordInput, Card } from '@mantine/core';
-import { useForm } from '@mantine/form';
 import { useNavigate } from "react-router-dom";
+import { useForm } from '@mantine/form';
 
 const RegisterForm = () => {
   const { error, handleRegister } = useRegister();
@@ -26,52 +25,68 @@ const RegisterForm = () => {
     event.preventDefault();
     await handleRegister(form.values);
   }
-  
+
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
+    <div className="card shadow-lg p-6 rounded-lg">
       <form onSubmit={handleSubmit}>
-        <TextInput
-          withAsterisk
-          variant="filled"
-          label="Email"
-          placeholder="your@email.com"
-          {...form.getInputProps('email')}
-        />
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Email</span>
+          </label>
+          <input
+            type="email"
+            placeholder="your@email.com"
+            className="input input-bordered"
+            {...form.getInputProps('email')}
+          />
+        </div>
 
-        <TextInput
-          withAsterisk
-          variant="filled"
-          label="Fullname"
-          placeholder="Your fullname"
-          {...form.getInputProps('fullname')}
-        />
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Fullname</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Your fullname"
+            className="input input-bordered"
+            {...form.getInputProps('fullname')}
+          />
+        </div>
 
-        <PasswordInput
-          withAsterisk
-          variant="filled"
-          label="Password"
-          placeholder="Your password"
-          {...form.getInputProps('password')}
-        />
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Password</span>
+          </label>
+          <input
+            type="password"
+            placeholder="Your password"
+            className="input input-bordered"
+            {...form.getInputProps('password')}
+          />
+        </div>
 
-        <PasswordInput
-          withAsterisk
-          variant="filled"
-          label="Confirm Password"
-          placeholder="Confirm your password"
-          {...form.getInputProps('confirmPassword')}
-        />
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Confirm Password</span>
+          </label>
+          <input
+            type="password"
+            placeholder="Confirm your password"
+            className="input input-bordered"
+            {...form.getInputProps('confirmPassword')}
+          />
+        </div>
 
-        {error && <div style={{ color: 'red' }}>{error}</div>}
+        {error && <div className="text-red-500 mt-2">{error}</div>}
 
-        <Group position="right" mt="md">
-          <Button type="submit" disabled={!form.isValid()} style={{ width: '100%' }}>Register</Button>
-        </Group>
-        <Group justify="flex" mt="md">
-          <Button variant="subtle" onClick={() => navigate('/login')}>Sign up</Button>
-        </Group>
+        <div className="form-control mt-4">
+          <button type="submit" className="btn btn-primary" disabled={!form.isValid()}>Register</button>
+        </div>
+        <div className="form-control mt-4">
+          <button type="button" className="btn btn-link" onClick={() => navigate('/login')}>Sign up</button>
+        </div>
       </form>
-    </Card>
+    </div>
   );
 }
 
