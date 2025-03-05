@@ -20,6 +20,8 @@ const Login = () => {
 <path 
   fill="#9F5FCE" 
   d="M 1073 350 C 1095 99 1189 175 1264 184 C 1359 185 1392 224 1375 348 L 1343 351 L 1324 351 L 1160 355 Z"/>
+
+
   
       </svg>
       <div className="relative z-10">
