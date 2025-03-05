@@ -1,11 +1,10 @@
 import RegisterForm from "@/components/registerForm"
-import { Center } from "@mantine/core"
 
 const Register = () => {
   return (
-    <Center style={{ height: '100vh' }}>
+    <div className="flex items-center justify-center h-screen">
       <RegisterForm />
-    </Center>
+    </div>
   )
 }
 

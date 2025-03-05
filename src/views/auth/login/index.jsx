@@ -1,12 +1,12 @@
 import LoginForm from "@/components/loginForm";
-import { Center } from "@mantine/core";
 
 
 const Login = () => {
   return (
-    <Center style={{ height: '100vh' }}>
+    <div className="flex items-center justify-center h-screen">
       <LoginForm />
-    </Center>
+    </div>
+
   )
 }
 
