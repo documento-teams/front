@@ -7,9 +7,9 @@ import { MantineProvider } from "@mantine/core";
 function App() {
   return (
     <>
-      <MantineProvider>
+      {/* <MantineProvider> */}
         <Routes />
-      </MantineProvider>
+      {/* </MantineProvider> */}
     </>
   );
 }
