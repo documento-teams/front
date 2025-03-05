@@ -26,7 +26,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/document",
-    element: <DocumentView />,
+    element: <ProtectedRoutes><DocumentView /></ProtectedRoutes>,
   }
 ]);
 

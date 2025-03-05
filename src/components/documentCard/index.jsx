@@ -11,11 +11,17 @@ const DocumentCard = () => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col items-center gap-4 p-4">
       {documents.map((document) => (
-        <div key={document.id} className="document-card">
-          <h2>{document.name}</h2>
-          <p>{document.content}</p>
+        <div key={document.id} className="card bg-base-100 w-96 shadow-sm">
+          <div className="card-body">
+            <h2 className="card-title">{document.name}</h2>
+            <p className="truncate">{document.content.slice(0, 100)}...</p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">Open</button>
+              <button className="btn btn-error">Delete</button>
+            </div>
+          </div>
         </div>
       ))}
     </div>
