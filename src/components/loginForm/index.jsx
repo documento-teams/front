@@ -60,19 +60,17 @@ const LoginForm = () => {
 
             {error && <div className="text-red-500 text-center">{error}</div>}
 
-            <div className="form-control mt-4">
+            <div className="form-control mt-4 flex justify-between items-center">
               <button 
                 type="submit" 
-                className="btn w-full bg-[#A084E8] hover:bg-[#9F5FCE] text-[#A084E8] transition"
+                className="btn bg-[#A084E8] hover:bg-[#9F5FCE] text-white transition w-1/2 mr-2"
                 disabled={!form.isValid()}>
                 Login
               </button>
-            </div>
 
-            <div className="text-center mt-2">
               <button 
                 type="button" 
-                className="text-[#A084E8] hover:underline transition"
+                className="btn bg-[#A084E8] hover:bg-[#9F5FCE] text-white transition w-1/2 text-right"
                 onClick={() => navigate('/register')}>
                 Sign up
               </button>

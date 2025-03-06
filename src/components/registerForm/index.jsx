@@ -27,8 +27,9 @@ const RegisterForm = () => {
   }
 
   return (
-    <div className="card shadow-lg p-6 rounded-lg">
+    <div className="card shadow-lg p-8 rounded-lg border-1 border-[#A084E8] backdrop-blur-md bg-white bg-opacity-20 dark:bg-opacity-50">
       <form onSubmit={handleSubmit}>
+        <h2 className="text-2xl font-bold text-gray-800 dark:text-black text-center mb-4">Register</h2>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -36,7 +37,9 @@ const RegisterForm = () => {
           <input
             type="email"
             placeholder="your@email.com"
-            className="input input-bordered"
+            className="input input-bordered border border-black bg-gray-100 
+              text-gray-800 focus:bg-white focus:border-[#9F5FCE] focus:ring-2 
+              focus:ring-[#9F5FCE] transition w-full"
             {...form.getInputProps('email')}
           />
         </div>
@@ -48,7 +51,9 @@ const RegisterForm = () => {
           <input
             type="text"
             placeholder="Your fullname"
-            className="input input-bordered"
+            className="input input-bordered border border-black bg-gray-100 
+              text-gray-800 focus:bg-white focus:border-[#9F5FCE] focus:ring-2 
+              focus:ring-[#9F5FCE] transition w-full"
             {...form.getInputProps('fullname')}
           />
         </div>
@@ -60,7 +65,9 @@ const RegisterForm = () => {
           <input
             type="password"
             placeholder="Your password"
-            className="input input-bordered"
+            className="input input-bordered border border-black bg-gray-100 
+              text-gray-800 focus:bg-white focus:border-[#9F5FCE] focus:ring-2 
+              focus:ring-[#9F5FCE] transition w-full"
             {...form.getInputProps('password')}
           />
         </div>
@@ -72,18 +79,29 @@ const RegisterForm = () => {
           <input
             type="password"
             placeholder="Confirm your password"
-            className="input input-bordered"
+            className="input input-bordered border border-black bg-gray-100 
+              text-gray-800 focus:bg-white focus:border-[#9F5FCE] focus:ring-2 
+              focus:ring-[#9F5FCE] transition w-full"
             {...form.getInputProps('confirmPassword')}
           />
         </div>
 
         {error && <div className="text-red-500 mt-2">{error}</div>}
 
-        <div className="form-control mt-4">
-          <button type="submit" className="btn btn-primary" disabled={!form.isValid()}>Register</button>
-        </div>
-        <div className="form-control mt-4">
-          <button type="button" className="btn btn-link" onClick={() => navigate('/login')}>Sign up</button>
+        <div className="form-control mt-4 flex justify-between items-center">
+          <button 
+            type="submit" 
+            className="btn bg-[#A084E8] hover:bg-[#9F5FCE] text-white transition w-1/2 mr-2"
+            disabled={!form.isValid()}>
+            Register
+          </button>
+
+          <button 
+            type="button" 
+            className="btn bg-[#A084E8] hover:bg-[#9F5FCE] text-white transition w-1/2 text-right"
+            onClick={() => navigate('/login')}>
+            Sign in
+          </button>
         </div>
       </form>
     </div>
