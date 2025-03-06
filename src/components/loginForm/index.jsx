@@ -31,7 +31,7 @@ const LoginForm = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-gray-700 dark:text-gray-300">Email</span>
+                <span className="label-text text-[#c0a7eb] font-bold">Email</span>
               </label>
               <input
                 type="email"
@@ -46,7 +46,7 @@ const LoginForm = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-gray-700 dark:text-gray-300">Password</span>
+                <span className="label-text text-[#c0a7eb] font-bold">Password</span>
               </label>
               <input
                 type="password"
@@ -63,7 +63,7 @@ const LoginForm = () => {
             <div className="form-control mt-4 flex justify-between items-center">
               <button 
                 type="submit" 
-                className="btn bg-[#A084E8] hover:bg-[#9F5FCE] text-white transition w-1/2 mr-2"
+                className="btn !bg-[#d7c8f3] hover:bg-[#9F5FCE] !text-white transition w-1/2 mr-2"
                 disabled={!form.isValid()}>
                 Login
               </button>
@@ -79,7 +79,7 @@ const LoginForm = () => {
             <div className="form-control mt-4">
               <button 
                 type="button" 
-                className="btn btn-outline border-[#A084E8] text-[#A084E8] hover:bg-[#9F5FCE] hover:text-white transition w-full"
+                className="btn btn-outline border-[#A084E8] text-[#A084E8] hover:bg-[#9F5FCE] hover:text-white transition w-full font-popins"
                 onClick={() => navigate('/forgot-password')}>
                 Forgot Password?
               </button>

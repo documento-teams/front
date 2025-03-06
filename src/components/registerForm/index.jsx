@@ -28,11 +28,12 @@ const RegisterForm = () => {
 
   return (
     <div className="card shadow-lg p-8 rounded-lg border-1 border-[#A084E8] backdrop-blur-md bg-white bg-opacity-20 dark:bg-opacity-50">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} class="space-y-4">
+        <div class="card-body">
         <h2 className="text-2xl font-bold text-gray-800 dark:text-black text-center mb-4">Register</h2>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Email</span>
+            <span className="label-text !text-[#c0a7eb] font-bold">Email</span>
           </label>
           <input
             type="email"
@@ -46,7 +47,7 @@ const RegisterForm = () => {
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Fullname</span>
+            <span className="label-text !text-[#c0a7eb] font-bold">Fullname</span>
           </label>
           <input
             type="text"
@@ -60,7 +61,7 @@ const RegisterForm = () => {
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Password</span>
+            <span className="label-text !text-[#c0a7eb] font-bold">Password</span>
           </label>
           <input
             type="password"
@@ -74,7 +75,7 @@ const RegisterForm = () => {
 
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Confirm Password</span>
+            <span className="label-text !text-[#c0a7eb] font-bold mr-2">Confirm Password</span>
           </label>
           <input
             type="password"
@@ -91,7 +92,7 @@ const RegisterForm = () => {
         <div className="form-control mt-4 flex justify-between items-center">
           <button 
             type="submit" 
-            className="btn bg-[#A084E8] hover:bg-[#9F5FCE] text-white transition w-1/2 mr-2"
+            className="btn !bg-[#d7c8f3] hover:bg-[#9F5FCE] text-white transition w-1/2 mr-2"
             disabled={!form.isValid()}>
             Register
           </button>
@@ -102,6 +103,7 @@ const RegisterForm = () => {
             onClick={() => navigate('/login')}>
             Sign in
           </button>
+        </div>
         </div>
       </form>
     </div>
