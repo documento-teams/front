@@ -5,6 +5,7 @@ import Dashboard from "@/views/dashboard";
 import Register from "@/views/auth/register";
 import DocumentView from "@/views/document";
 import ProtectedRoutes from "@/components/protectedRoutes";
+import Workspaces from "@/views/workspaces";
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/document",
     element: <ProtectedRoutes><DocumentView /></ProtectedRoutes>,
+  },
+  {
+    path: "/workspaces",
+    element: <ProtectedRoutes><Workspaces /></ProtectedRoutes>,
   }
 ]);
 
