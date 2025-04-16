@@ -36,6 +36,16 @@ const useWorkspace = () => {
         credentials: 'include', // Important pour envoyer les cookies
         body: JSON.stringify(workspaceData)
       });
+      
+      if (!response.ok) {
+        throw new Error('Failed to create workspace');
+      }
+    } catch (err) {
+      setError(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     fetchWorkspaces();
