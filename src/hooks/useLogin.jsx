@@ -15,6 +15,7 @@ const useLogin = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(values),
+        credentials: 'include',
       });
 
       if (!response.ok) {
@@ -22,14 +23,13 @@ const useLogin = () => {
       }
       const data = await response.json();
 
-      localStorage.setItem('token', data.token);
-
       navigate('/dashboard');
     } catch (error) {
       console.error('Error:', error);
       setError(error.message);
     }
   };
+  
   return {
     email,
     setEmail,
@@ -39,4 +39,5 @@ const useLogin = () => {
     handleLogin,
   };
 }
+
 export default useLogin;
