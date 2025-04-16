@@ -16,7 +16,11 @@ const DocumentCard = () => {
         <div key={document.id} className="card bg-base-100 w-96 shadow-sm">
           <div className="card-body">
             <h2 className="card-title">{document.name}</h2>
-            <p className="truncate">{document.content.slice(0, 100)}...</p>
+            <p className="truncate">
+              {document.content 
+                ? `${document.content.slice(0, 100)}...` 
+                : "No content available"}
+            </p>
             <div className="card-actions justify-end">
               <button className="btn btn-primary">Open</button>
               <button className="btn btn-error">Delete</button>
