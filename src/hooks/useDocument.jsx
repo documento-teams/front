@@ -8,7 +8,7 @@ const useDocument = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/docs');
+        const response = await fetch(`${import.meta.env.VITE_URL_API}/api/docs`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
