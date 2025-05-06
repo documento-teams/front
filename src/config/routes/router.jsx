@@ -4,6 +4,7 @@ import Login from "@/views/auth/login";
 import Dashboard from "@/views/dashboard";
 import Register from "@/views/auth/register";
 import ProtectedRoutes from "@/components/protectedRoutes";
+import Documents from "@/views/document/documentsList";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <ProtectedRoutes><Dashboard /></ProtectedRoutes>,
+  },
+  {
+    path: "/documents",
+    element: <ProtectedRoutes><Documents /></ProtectedRoutes>,
   }
 ]);
 
