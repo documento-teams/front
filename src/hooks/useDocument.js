@@ -9,7 +9,6 @@ const useDocument = () => {
   const fetchDocumentList = async () => {
     try {
       const result = await api.get("/api/docs");
-      console.log("Documents fetched:", result);
       setDocuments(result);
     } catch (err) {
       setError(err);
